@@ -1,0 +1,13 @@
+click 
+pyzmq 
+
+uvicorn
+fastapi 
+websocket 
+
+pydantic 
+pydantic-settings 
+
+async-timeout 
+wget 
+httpx 
