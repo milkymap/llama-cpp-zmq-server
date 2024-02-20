@@ -111,6 +111,9 @@ class ZMQBroker:
                     try:
                         strategy_args:LaunchModelReqSchema = pickle.loads(encoded_task)
                         logger.debug(f'{worker_id} will lunch the llm {strategy_args.llama_model_name}')
+                        if strategy is not None: 
+                            logger.warning('current strategy will be deleted')
+                            del strategy
 
                         strategy = self.strategy_cls(**strategy_args.model_dump())
                         task_response = TaskResponse(task_content=None, task_status=True, error_message=None)
