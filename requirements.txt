@@ -11,3 +11,4 @@ pydantic-settings
 async-timeout 
 wget 
 httpx 
+aiofiles 
