@@ -11,4 +11,4 @@ class AppConfig(BaseSettings):
     inner_address:str='ipc:///tmp/broker2llms.ipc'
     outer_address:str='ipc:///tmp/client2broker.ipc'
     nb_llm_workers:int=2
-    path2models:str='/home/ibrahima/Volume/llama'
+    path2models:str 

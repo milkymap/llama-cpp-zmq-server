@@ -217,10 +217,10 @@ class LlamaRouter:
                 
                 stream_data = task_response.task_content
                 print(stream_data['choices'][0]['text'], end='', flush=True)
-                # yield json.dumps({
-                #     'stream_data': stream_data,
-                #     'more_stream': worker_status != WorkerStatus.DONE  
-                # })
+                yield json.dumps({
+                    'stream_data': stream_data,
+                    'more_stream': worker_status != WorkerStatus.DONE  
+                }) + '\n'
 
                 if worker_status == WorkerStatus.DONE:
                     break 
@@ -233,7 +233,7 @@ class LlamaRouter:
         yield json.dumps({
             'stream_data': None,
             'more_stream': False   
-        })
+        }) + '\n'
 
         socket.close(linger=0)
         
